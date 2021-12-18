@@ -1,0 +1,20 @@
+* {
+  font-family: tahoma, helvetica, arial, sans-serif;
+}
+
+input {
+  padding: 10px 10px;
+  margin: 5px 0px;
+  border: 2px solid red;
+  border-radius: 8px;
+}
+
+body {
+  background-color: black;
+  color: red;
+}
+
+img {
+  border: 5px solid red;
+  border-radius: 10px;
+}

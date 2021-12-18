@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Movie Recommender</title>
+{% endblock %}
+
+{% block body %}
+<h1>Movie Recommendor</h1>
+<form action="/search" method="POST">
+  <input type="text" name="searchbar" placeholder="Search">
+  <input type="submit" name="submit" value="Submit">
+</form>
+
+<form action="/" method="POST">
+  {% for lb in labels %}
+  <input type="checkbox" name = "genre", value="{{lb}}">
+  <label for="genre"> {{lb}}</label><br>
+  {% endfor %}
+  <input type="submit" value="Submit">
+</form>
+{% endblock %}

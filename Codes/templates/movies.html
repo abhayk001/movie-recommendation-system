@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Movies</title>
+{% endblock %}
+
+{% block body %}
+<h2>Recommended Movies</h2>
+{% for imdb_id, movie_details in movies.items() %}
+<a href={{'https://www.imdb.com/title/' + imdb_id}}>
+<h4>{{ movie_details[0] }}</h4>
+<img src={{ movie_details[1] }} alt="No poster found">
+</a>
+<br>
+<form action="/movies" method="POST">
+  <input type="checkbox" name = "watch", value={{imdb_id}}>
+  <label for="watched"> More movies like this? </label><br>
+{% endfor %}
+  <input type="submit" value="Submit">
+</form>
+{% endblock %}
